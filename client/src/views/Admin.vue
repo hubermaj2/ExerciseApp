@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="admin">
     <h1>ExcerciseApp</h1>
 
     <h1 class="title">
@@ -16,7 +16,7 @@
 // @ is an alias to /src
 
 export default {
-  name: 'Home',
+  name: 'Admin',
   components: {
     
   }
