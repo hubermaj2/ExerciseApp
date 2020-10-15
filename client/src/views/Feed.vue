@@ -14,13 +14,19 @@
                 <Sidebar />
             </div>
         </div>
-  </div> -->
-<div>
-<div class="dropdown">
-  <div class="dropdown-trigger">
-    <button class="button" 
+  </div> 
+  
 onclick="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" 
 onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" aria-haspopup="true" aria-controls="dropdown-menu">
+  -->
+<div>
+    Select exercises from the list:
+<div class="dropdown is-active">
+  <div class="dropdown-trigger">
+    <button class="button"
+
+
+>
       <span>Exercise Types</span>
       <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
