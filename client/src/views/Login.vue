@@ -1,7 +1,7 @@
 <template>
 
 <div class="level section">
-
+(type anything for now)
 <div class="level-item">
 
 
@@ -44,9 +44,9 @@ export default {
     methods: {
         login(){
             session.user = {
-                name: 'Rabbi Moshe Plotkin',
-                handle: 'jewpaltz',
-                profile: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/120552651_10102367831029710_8523278423201553541_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=Jnr3FRfM4FIAX8F5rC9&_nc_ht=scontent-lga3-1.xx&oh=14a477b3f03186158eccf30fe3a03bda&oe=5FA552C2'
+                name: 'ExerciseApp User',
+                handle: 'exerciseguy',
+                profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
             }
             session.addNotification('Yay! You logged in', 'success')
             this.$router.push('feed')
