@@ -1,2 +1,5 @@
-# ExerciseApp
-Web Programming Fall 2020 Exercise App
+# 2020Fall
+Web Programming course for the Fall of 2020
+
+## Third Day
+We are learning about git & github
