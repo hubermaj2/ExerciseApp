@@ -13,34 +13,25 @@
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu "  :class="{ 'is-active': isActive }">
+  <div v-if="session.user && session.user.name==='Admin'" id="navbarBasicExample" class="navbar-menu " :class="{ 'is-active': isActive }">
     <div class="navbar-start">
       <router-link to="/"  class="navbar-item" >Home</router-link>
       <router-link to="/about"  class="navbar-item" >About</router-link>
       <router-link to="/record"  class="navbar-item" >Record Exercises</router-link>
       <router-link to="/admin" class="navbar-item" >Admin Tools</router-link>
+    </div>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <LoginBadge />
       </div>
+    </div>
+  </div>
+  <div v-else id="navbarBasicExample" class="navbar-menu " :class="{ 'is-active': isActive }">
+    <div class="navbar-start">
+      <router-link to="/"  class="navbar-item" >Home</router-link>
+      <router-link to="/about"  class="navbar-item" >About</router-link>
+      <router-link to="/record"  class="navbar-item" >Record Exercises</router-link>
     </div>
 
     <div class="navbar-end">
@@ -56,10 +47,12 @@
 
 <script>
 import LoginBadge from "@/components/LoginBadge";
+import session from "@/models/session";
 
 export default {
   data: ()=> ({
-      isActive: false
+      isActive: false,
+      session
   }),
   methods: {
 

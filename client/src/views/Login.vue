@@ -1,7 +1,6 @@
 <template>
 
 <div class="level section">
-(type anything for now)
 <div class="level-item">
 
 
@@ -60,23 +59,22 @@ export default {
                 handle: 'admin',
                 profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
             }
-            session.addNotification("Welcome, " + this.input.useremail, 'success')
+            session.addNotification("Welcome, " + session.user.name, 'success')
             }
-            if (this.input.useremail == "exerciseguy@email.com" && this.input.userpassword == "1234"){
+            else if (this.input.useremail == "exerciseguy@email.com" && this.input.userpassword == "1234"){
             session.user = {
                 name: 'Exerciseguy',
                 handle: 'exerciseguy',
                 profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
             }
-            session.addNotification("Welcome, " + this.input.useremail, 'success')
+            session.addNotification("Welcome, " + session.user.name, 'success')
             }
-            if (this.input.useremail == "admin@email.com" && this.input.userpassword == "1234"){
+            else if (this.input.useremail == "exercisegal@email.com" && this.input.userpassword == "1234"){
             session.user = {
                 name: 'Exercisegal',
                 handle: 'exercisegal',
                 profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
             }
-            session.addNotification("Welcome, " + this.input.useremail, 'success')
             }
             
             this.$router.push('record')
