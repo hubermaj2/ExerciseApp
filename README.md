@@ -1,5 +1,9 @@
-# 2020Fall
-Web Programming course for the Fall of 2020
+# Exercise App by Jared Huberman
+Web Programming Fall 2020
 
-## Third Day
-We are learning about git & github
+Project is in the client folder. There are currently three emails you can log in with:
+-admin@email.com
+-exerciseguy@email.com
+-exercisegal@email.com
+
+All passwords are 1234.
