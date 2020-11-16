@@ -11,7 +11,7 @@
             <p class="has-text-weight-bold">{{session.user.name}}</p>
             <p class="is-size-7">@{{session.user.handle}}</p>
         </div>
-        <router-link to="/login"  class="button is-light" >
+        <router-link to="/logout"  class="button is-light" >
                 Log out
             </router-link>
         </div>
