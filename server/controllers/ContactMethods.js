@@ -39,7 +39,7 @@ router
             res.send( newCM );
         }).catch(next)
     })
-    .post('/udpate', (req, res, next) => {
+    .post('/update', (req, res, next) => {
         cm.update(
             req.body.id,
             req.body.Type, 
@@ -53,7 +53,7 @@ router
     })
     .post('/remove', (req, res, next) => {
         cm.remove(
-            req.body.id,
+            req.body.id
         ).then(newUser => {
             res.send( { ...newUser, Password: undefined } );
         }).catch(next)
@@ -64,7 +64,7 @@ router
             req.body.LastName, 
             req.body.DOB, 
             req.body.Password, 
-            users.Types.USER, 
+            users.Types.USER
         ).then(newUser => {
             res.send( newUser );
         }).catch(next)
