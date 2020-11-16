@@ -36,7 +36,6 @@ app.use('/posts', posts);
 app.use('/comments', comments);
 app.use('/reactions', reactions);
 app.use('/contactmethods', contactmethods);
-app.use('/emojis', emojis)
 
 app.get('*', (req, res, next) => {
     const filename = path.join(__dirname, '/../docs/index.html');
