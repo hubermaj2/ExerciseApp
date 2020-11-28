@@ -1,8 +1,8 @@
 {
-  "name": "exerciseapp",
+  "name": "2020fall",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hubermaj2/ExerciseApp.git"
+    "url": "git+https://github.com/jewpaltz/2020Fall.git"
   },
   "license": "ISC",
   "scripts": {

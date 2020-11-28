@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <h1>ExcerciseApp</h1>
+    <h1>Welcome to our home page</h1>
 
     <h1 class="title">
-        Welcome to my Exercise App.
+        Hello World
       </h1>
       <p class="subtitle">
-        Click "Record Exercises" above to begin!
+        My first website with <strong>Bulma</strong>!
       </p>
       
   </div>

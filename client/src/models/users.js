@@ -1,12 +1,10 @@
-const data = [{ name: 'Moshe', age: 43}, { name: 'Biden', age: 78 }]
+/* B"H
 
-function getAll(){
-    return data;
+*/
+import { myFetch } from "./my-fetch";
+
+
+
+export function getList() {
+    return myFetch('users');
 }
-
-function add(name, age){
-    data.push({name, age});
-}
-
-
-module.exports = { getAll, add, search: q => data.filter(x=> x.name == q) }
