@@ -93,7 +93,7 @@ export default {
 //  Load facebook scripts
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '864177661004843',
+      appId      : '5373206126038310',
       cookie     : true,
       xfbml      : true,
       version    : 'v9.0'
