@@ -18,4 +18,3 @@ export function myFetch(url, data = null, method = null){
         return fetch( API_ROOT + url  ).then(x=> x.json() )
     }
 }
-
