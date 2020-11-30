@@ -8,7 +8,7 @@
     <form>
         <div class="field">
         <p class="control has-icons-left has-icons-right">
-            <input v-model="email" class="input" type="email" placeholder="Email">
+            <input class="input" type="email" placeholder="Email">
             <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
             </span>
@@ -19,7 +19,7 @@
         </div>
         <div class="field">
         <p class="control has-icons-left">
-            <input class="input" v-model="password" type="password" placeholder="Password">
+            <input class="input" type="password" placeholder="Password">
             <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
             </span>
@@ -32,6 +32,9 @@
             </button>
             <button class="button is-primary" @click.prevent="fbLogin">
             FB Login
+            </button>
+            <button class="button is-warning" @click.prevent="googleLogin">
+            Google Login
             </button>
         </p>
         </div>
@@ -47,21 +50,7 @@ let auth2 = null;
 
 export default {
     methods: {
-
         login(){
-            axios.post('https://damp-chamber-63928.herokuapp.com/users/login',
-            {
-                email : this.email,
-                password : this.password
-        }
-    )
-            .then(function (response) {
-            verification = response.data;
-            console.log(verification);
-        })
-        .catch(function (error) {
-            console.log(error.message);
-        });
             session.user = {
                 name: 'Rabbi Moshe Plotkin',
                 handle: 'jewpaltz',
@@ -87,6 +76,19 @@ export default {
                 }  )
             }, { scope: 'public_profile,email,user_photos'})
         },
+        async googleLogin(){
+            const googleUser = await auth2.signIn();
+            console.log(googleUser);
+            const profile = googleUser.getBasicProfile();
+            console.log(profile);
+                    session.user = {
+                        name: profile.getName(),
+                        handle: profile.getEmail(),
+                        profile: profile.getImageUrl()
+                    }
+                    session.addNotification('Yay! You logged in', 'success')
+                    this.$router.push('feed')
+        }
     }
 }
 
@@ -112,6 +114,22 @@ export default {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
+
+//////////////////////////////////
+//  Load Google Scripts
+        const googleScriptTag = document.createElement('script')
+        googleScriptTag.setAttribute('src', 'https://apis.google.com/js/api:client.js')
+        document.head.appendChild(googleScriptTag)
+        googleScriptTag.onload = () => {
+            // the global gapi variable is created by loading that script
+            gapi.load('auth2', () => {
+                auth2 = gapi.auth2.init({
+                    client_id: "69162742167-oo4oe777cjfues67332npkpss244ktga.apps.googleusercontent.com",
+                    cookiepolicy: 'single_host_origin',
+                    scope: 'profile email'
+                })
+            })
+        }
 
 </script>
 

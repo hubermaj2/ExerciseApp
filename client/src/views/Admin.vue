@@ -5,11 +5,30 @@
     <h1>Admin Tools</h1>
 
     <h1 class="title">
-        Edit exercises
+        Add an exercise
       </h1>
-      <div><br>Add an Exercise:</div>
+      <div>Exercise Name:</div>
         <input v-model="exercisename" type="text" ref="my_input">
+        <div><br>Type:</div>
+        <div class="select is-multiple">
+          <select v-model="type" multiple size="3">
+            <option value="Cardio">Cardio</option>
+            <option value="Resistance">Resistance</option>
+            <option value="Stretch">Stretch</option>
+          </select>
+        </div>
+        <div><br>Muscle Group:</div>
+        <div class="select is-multiple">
+          <select v-model="musclegroup" multiple size="4">
+            <option value="Legs">Legs</option>
+            <option value="Arms">Arms</option>
+            <option value="Back">Back</option>
+            <option value="Core">Core</option>
+          </select>
+        </div>
+        <br>
         <button v-on:click="submit">Submit</button>
+        
   </div>
 </template>
 
@@ -23,7 +42,9 @@ import submitbackend from "../../../server/models/admin.js"
 export default {
   name: 'Admin',
   data: {
-    exercisename: ''
+    exercisename: '',
+    type: '',
+    musclegroup: ''
   },
   components: {
 
@@ -32,7 +53,9 @@ export default {
       submit: function (event){
         axios.post('https://damp-chamber-63928.herokuapp.com/admin',
     {
-      exercisename: this.exercisename
+      exercisename: this.exercisename,
+      type: this.type,
+      musclegroup: this.musclegroup
     }
     )
     .then(response => {

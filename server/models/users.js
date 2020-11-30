@@ -27,16 +27,15 @@ async function get(id){
 }
 
 async function login(email, password){
-    const sql = `SELECT *
-    FROM ${PREFIX}Users U Join ${PREFIX}ContactMethods CM ON U.id=CM.User_id WHERE CM.Value=?`;
-    const rows = await mysql.query(sql, [email]);
-    if(!rows.length) throw { status: 404, message: "Sorry, that email address is not registered with us." };
-    console.log({password, Password: rows[0].Password});
+    const sql = `SELECT * FROM ${PREFIX}Users WHERE email = '${email}' AND password = '${password}'`;
+    const rows = await mysql.query(sql, [email, password]);
+    if(!rows.length) throw { status: 404, message: "Sorry, you are not a registered user." };
+    //console.log({password, Password: rows[0].Password});
 
-    const hash = await bcrypt.hash(password, rows[0].Password)
-    const res = await bcrypt.compare(password, rows[0].Password)
-    console.log ({res, hash})
-    if(! res ) throw { status: 403, message: "Sorry, wrong password." };
+    //const hash = await bcrypt.hash(password, rows[0].Password)
+    //const res = await bcrypt.compare(password, rows[0].Password)
+    //console.log ({res, hash})
+    //if(! res ) throw { status: 403, message: "Sorry, wrong password." };
     return get(rows[0].User_id);
 }
 

@@ -25,6 +25,8 @@ router
     .post('/', (req, res, next) => {
         admin.submitbackend(
             req.body.exercisename, 
+            req.body.type,
+            req.body.musclegroup
             //req.body.Post_id, 
             //req.body.Owner_id, 
         ).then(x => {
