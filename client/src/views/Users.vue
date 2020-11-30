@@ -31,6 +31,7 @@
 <script>
 
 import { getList } from "@/models/users";
+import users from "../../../server/models/users.js"
 import session from "@/models/session";
 import axios from "axios"
 export default {
