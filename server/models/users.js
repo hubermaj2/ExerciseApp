@@ -1,7 +1,7 @@
 /* B"H
 
 */
-//import session from "../../client/src/models/session.js";
+import session from "../../client/src/models/session.js";
 const bcrypt = require('bcrypt');
 const mysql = require('./mysql');
 const cm = require('./ContactMethods');
@@ -37,11 +37,11 @@ async function login(email, password){
     //const res = await bcrypt.compare(password, rows[0].Password)
     //console.log ({res, hash})
     //if(! res ) throw { status: 403, message: "Sorry, wrong password." };
-    //session.user = {
-    //    name: email,
-    //    handle: email,
-    //    profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
-    //}
+    session.user = {
+        name: email,
+        handle: email,
+        profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
+    }
     return rows[0];
 }
 

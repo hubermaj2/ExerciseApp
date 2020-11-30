@@ -57,7 +57,8 @@ export default {
             if (this.email == "admin@email.com" && this.password == "1234"){
                 session.user = {
                     name: 'Admin',
-                    handle: 'admin'
+                    handle: 'admin',
+                    profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
                 }
                 return;
             }
@@ -74,14 +75,14 @@ export default {
         })
         .catch(function (error) {
             console.log(error);
-            
+            return;
         });
         //console.log(verification)
-            session.user = {
-                name: this.email,
-                handle: this.email,
-                profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
-            }
+            //session.user = {
+            //    name: this.email,
+            //    handle: this.email,
+            //    profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
+            //}
             session.addNotification('Yay! You logged in', 'success')
             const cookies = new Cookies();
             cookies.set('auth', "hi", {path: '/'});
