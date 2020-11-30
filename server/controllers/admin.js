@@ -3,7 +3,7 @@
 */
 
 const express = require('express');
-const comments = require('../models/admin');
+const admin = require('../models/admin');
 
 const router = express.Router();
 
