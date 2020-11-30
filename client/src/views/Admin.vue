@@ -30,7 +30,7 @@ export default {
   },
   methods:{
       submit: function (event){
-        axios.post('http://localhost:3001/admin',
+        axios.post('https://damp-chamber-63928.herokuapp.com/admin',
     {
       exercisename: this.exercisename
     }
