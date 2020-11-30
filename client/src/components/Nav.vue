@@ -27,7 +27,6 @@
           <router-link to="/users"  class="navbar-item" >Users</router-link>
           <router-link to="/admin"  class="navbar-item" >Edit exercises</router-link>
         </div>
-        
       </div>
     </div>
  </div>
@@ -47,7 +46,8 @@ import LoginBadge from "@/components/LoginBadge";
 import session from "@/models/session";
 export default {
   data: ()=> ({
-      isActive: false
+      isActive: false,
+      session
   }),
   methods: {
 
