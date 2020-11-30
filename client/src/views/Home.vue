@@ -4,8 +4,11 @@
 
     <h1 class="title">
       </h1>
-      <p class="subtitle">
-        Click "Record" above to begin recording your exercises.
+      <p v-if="session.user" class="subtitle">
+        Click "Record" above to begin tracking your exercise!
+      </p>
+      <p v-else class="subtitle">
+        Sign up or log in to begin!
       </p>
       
   </div>
