@@ -27,9 +27,12 @@ async function get(id){
 }
 
 async function login(email, password){
+    console.log(email);
+    console.log(password);
     const sql = `SELECT * FROM ${PREFIX}Users WHERE email = '${email}' AND password = '${password}'`;
     const rows = await mysql.query(sql, [email, password]);
     console.log(rows);
+    console.log("BRUH BRUH BRUH");
     if(!rows.length) throw { status: 404, message: "Sorry, you are not a registered user." };
     //console.log({password, Password: rows[0].Password});
 
