@@ -19,7 +19,7 @@
         </div>
         <div class="field">
         <p class="control has-icons-left">
-            <input class="input" v-model="password" type="password" placeholder="Password">
+            <input v-model="password" class="input" type="password" placeholder="Password">
             <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
             </span>
@@ -27,7 +27,7 @@
         </div>
         <div class="field">
         <p class="control">
-            <button class="button is-success" @click.prevent="login">
+            <button class="button is-success" v-on:click="login">
             Login
             </button>
             <button class="button is-primary" @click.prevent="fbLogin">
@@ -58,14 +58,15 @@ export default {
                 password : this.password
         }
     )
-            .then(function (response) {
+            .then(response =>{
+            console.log(response);
             verification = response.data;
             console.log(verification);
         })
         .catch(function (error) {
-            console.log(error.message);
+            console.log(error);
         });
-            session.user = {
+           /* session.user = {
                 name: 'Rabbi Moshe Plotkin',
                 handle: 'jewpaltz',
                 profile: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/120552651_10102367831029710_8523278423201553541_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=Jnr3FRfM4FIAX8F5rC9&_nc_ht=scontent-lga3-1.xx&oh=14a477b3f03186158eccf30fe3a03bda&oe=5FA552C2'
@@ -73,7 +74,7 @@ export default {
             session.addNotification('Yay! You logged in', 'success')
             const cookies = new Cookies();
             cookies.set('auth', "hi", {path: '/'});
-            this.$router.push('feed')
+            this.$router.push('feed')*/
         },
         fbLogin(){
             FB.login( authInfo =>{
