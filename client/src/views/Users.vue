@@ -7,21 +7,20 @@
                 <th>id</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>E-Mail</th>
                 <th>Password</th>
                 <th>DOB</th>
                 <th>Type</th>
             </tr></thead>
             <tbody>
-                <tr v-for=" (x, i) in list " 
-                      :key="i"
-                      :i="i"
-                      :post="x">
-                    <th>{{x.id}}</th>
-                    <td>{{x.FirstName}}</td>
-                    <td>{{x.LastName}}</td>
-                    <td>{{x.Password}}</td>
-                    <td>{{x.DOB}}</td>
-                    <td>{{x.Type}}</td>
+                <tr v-for="user in users" :key="user.id"> 
+                    <th>{{user.id}}</th>
+                    <td>{{user.FirstName}}</td>
+                    <td>{{user.LastName}}</td>
+                    <td>{{user.email}}
+                    <td>{{user.Password}}</td>
+                    <td>{{user.DOB}}</td>
+                    <td>{{user.User_Type}}</td>
                 </tr>
             </tbody>
         </table>
@@ -33,7 +32,7 @@
 
 import { getList } from "@/models/users";
 import session from "@/models/session";
-
+import axios from "axios"
 export default {
     data(){
         return {
@@ -47,8 +46,25 @@ export default {
         
     },
     methods: {
-        
-    }
+        getUsers(){
+            axios.get('https://damp-chamber-63928.herokuapp.com/users')
+        .then(response => (this.users = response.data))
+    .catch(error => {
+      console.log(error.message);
+    });
+        }
+    },
+     mounted() {
+    axios
+      .get("https://damp-chamber-63928.herokuapp.com/users/")
+      .then(response => {
+        this.results = response.data[1];
+        console.log(this.results);
+      })
+      .catch(err => {
+        throw err;
+      });
+  }
 }
 </script>
 
