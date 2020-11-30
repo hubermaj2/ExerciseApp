@@ -39,9 +39,9 @@ export default {
             list: []
         }
     },
-    async created(){
-        this.list = await getList(); 
-    },
+    //async created(){
+        //this.list = await getList(); 
+    //},
     components: {
         
     },
