@@ -66,6 +66,7 @@ export default {
         .catch(function (error) {
             console.log(error);
         });
+        console.log(verification)
            /* session.user = {
                 name: 'Rabbi Moshe Plotkin',
                 handle: 'jewpaltz',
