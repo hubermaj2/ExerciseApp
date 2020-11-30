@@ -23,12 +23,12 @@ router
         .catch(next);
     })
     .post('/', (req, res, next) => {
-        comments.add(
-            req.body.Text, 
-            req.body.Post_id, 
-            req.body.Owner_id, 
-        ).then(newUser => {
-            res.send( newUser );
+        admin.submitbackend(
+            req.body.exercisename, 
+            //req.body.Post_id, 
+            //req.body.Owner_id, 
+        ).then(x => {
+            res.send( x );
         }).catch(next)
     })
    .put('/:id', (req, res, next) => {

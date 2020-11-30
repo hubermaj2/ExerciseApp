@@ -30,10 +30,10 @@ export default {
   },
   methods:{
       submit: function (event){
-        submitbackend(this.exercisename);
-      /*  axios.put('http://192.168.0.6:6969/theme', 
+        //submitbackend(this.exercisename);
+        axios.post('https://damp-chamber-63928.herokuapp.com/admin/submit',
     {
-      theme: this.state.theme
+      exercisename: this.exercisename
     }
     )
     .then(response => {
@@ -41,7 +41,7 @@ export default {
     })
     .catch(error => {
       console.log(error);
-    });*/
+    });
       }
   }
 }
