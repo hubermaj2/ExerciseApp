@@ -49,7 +49,7 @@ let auth2 = null;
 export default {
     methods: {
 
-        login(){
+        login: function(event){
             axios.post('https://damp-chamber-63928.herokuapp.com/users/login',
             {
                 email : this.email,
