@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import admin from "..\..\..\server\models\admin.js"
+//import admin from "..\..\..\server\models\admin.js"
 // @ is an alias to /src
 // document.getElementById('textbox').value
 export default {
@@ -25,9 +25,6 @@ export default {
     
   },
   methods:{
-    test(){
-      admin.submit("dog");
-    }
   }
 }
 </script>
