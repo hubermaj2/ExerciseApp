@@ -9,7 +9,7 @@ const router = express.Router();
 
 router
     .get('/', (req, res, next) => {
-        users.getAll().then(users=> res.send( users.map(user=> ({ ...user, Password: undefined}) ) ) )
+        users.getAll().then(x=> res.send( x.map(user=> ({ ...user, Password: undefined}) ) ) )
         .catch(next);
     })
     .get('/:id', (req, res, next) => {

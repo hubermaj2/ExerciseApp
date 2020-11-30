@@ -12,7 +12,7 @@ const Types = { ADMIN:5, USER:6 };
 async function getAll(){
     //throw { status: 501, message: "This is a fake error" }
     //await Promise.resolve()
-    console.log("Called Get All")
+    console.log("Called Get All");
     return await mysql.query(`SELECT * FROM ${PREFIX}Users`);
 }
 

@@ -13,14 +13,17 @@
                 <th>Type</th>
             </tr></thead>
             <tbody>
-                <tr v-for="user in users" :key="user.id"> 
-                    <th>{{user.id}}</th>
-                    <td>{{user.FirstName}}</td>
-                    <td>{{user.LastName}}</td>
-                    <td>{{user.email}}
-                    <td>{{user.Password}}</td>
-                    <td>{{user.DOB}}</td>
-                    <td>{{user.User_Type}}</td>
+                <tr v-for=" (x, i) in users " 
+                      :key="i"
+                      :i="i"
+                      :post="x">
+                    <th>{{x.id}}</th>
+                    <td>{{x.FirstName}}</td>
+                    <td>{{x.LastName}}</td>
+                    <td>{{x.email}}</td>
+                    <td>{{x.Password}}</td>
+                    <td>{{x.DOB}}</td>
+                    <td>{{x.User_Type}}</td>
                 </tr>
             </tbody>
         </table>
@@ -30,42 +33,39 @@
 
 <script>
 
-//import { getList } from "@/models/users";
-//import users from "../../../server/models/users.js"
+import { getList } from "@/models/users";
 import session from "@/models/session";
-import axios from "axios"
+import axios from "axios";
 export default {
-    data(){
+    data: function(){
         return {
-            list: []
+            users: []
         }
     },
     //async created(){
-        //this.list = await getList(); 
+    //    this.list = await getList(); 
     //},
     components: {
         
     },
     methods: {
-        getUsers(){
-            axios.get('https://damp-chamber-63928.herokuapp.com/users')
-        .then(response => (this.users = response.data))
-    .catch(error => {
-      console.log(error.message);
-    });
-        }
+        getUsers: function() {
+
+        var app = this;
+
+         axios.get('https://damp-chamber-63928.herokuapp.com/users')
+            .then(function (response) {
+            app.users = response.data;
+        })
+        .catch(function (error) {
+            console.log(error.message);
+        });
+
+      }
     },
-     mounted() {
-    axios
-      .get("https://damp-chamber-63928.herokuapp.com/users/")
-      .then(response => {
-        this.results = response.data[1];
-        console.log(this.results);
-      })
-      .catch(err => {
-        throw err;
-      });
-  }
+    created() {
+      this.getUsers();
+    }
 }
 </script>
 
