@@ -43,7 +43,7 @@ app.use('/users', users);
 app.use('/posts', posts);
 app.use('/comments', comments);
 app.use('/reactions', reactions);
-app.user('/admin', admin);
+app.use('/admin', admin);
 
 app.get('*', (req, res, next) => {
     const filename = path.join(__dirname, '/../docs/index.html');
