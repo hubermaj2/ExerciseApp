@@ -26,6 +26,10 @@ router
         users.search(req.query.q).then(x=> res.send( x ) )
         .catch(next);
     })
+    .get('/exercises', (req, res, next) => {
+        users.getExercises(req.query.q).then(x=> res.send( x ) )
+        .catch(next);
+    })
     .post('/', (req, res, next) => {
         users.add(
             req.body.FirstName,

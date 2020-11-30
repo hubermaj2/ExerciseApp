@@ -87,7 +87,7 @@ export default {
 
         var app = this;
 
-         axios.get('https://damp-chamber-63928.herokuapp.com/users')
+         axios.get('https://damp-chamber-63928.herokuapp.com/users/exercises')
             .then(function (response) {
             app.exercises = response.data;
         })

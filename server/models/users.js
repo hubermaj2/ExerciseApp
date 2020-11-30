@@ -16,6 +16,9 @@ async function getAll(){
     console.log("Called Get All");
     return await mysql.query(`SELECT * FROM ${PREFIX}Users`);
 }
+async function getExercises(){
+    return await mysql.query(`SELECT * FROM ${PREFIX}Exercise_Types`);
+}
 
 async function get(id){
     const sql = `SELECT 
@@ -79,4 +82,4 @@ async function register(FirstName, LastName, DOB, Password, User_Type, email) {
 
 const search = async q => await mysql.query(`SELECT id, FirstName, LastName FROM ${PREFIX}Users WHERE LastName LIKE ? OR FirstName LIKE ?; `, [`%${q}%`, `%${q}%`]);
 
-module.exports = { getAll, get, add, update, remove, getTypes, register, login, search, Types }
+module.exports = { getExercises, getAll, get, add, update, remove, getTypes, register, login, search, Types }
