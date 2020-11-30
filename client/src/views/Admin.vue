@@ -1,5 +1,3 @@
-
-<script src="..\..\..\server\models\admin.js"></script>
 <template>
   <div id="submit" class="admin">
     <h1>Admin Tools</h1>

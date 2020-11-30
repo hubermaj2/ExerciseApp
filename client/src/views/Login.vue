@@ -74,7 +74,7 @@ export default {
         })
         .catch(function (error) {
             console.log(error);
-            return;
+            
         });
         //console.log(verification)
             session.user = {
