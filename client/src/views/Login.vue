@@ -43,6 +43,7 @@
 <script>
 import session from "@/models/session";
 import Cookie from "universal-cookie";
+import axios from "axios";
 let auth2 = null;
 
 export default {
