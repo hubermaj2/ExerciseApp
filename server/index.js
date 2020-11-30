@@ -6,9 +6,10 @@ const users = require('./controllers/users');
 const posts = require('./controllers/posts');
 const comments = require('./controllers/comments');
 const reactions = require('./controllers/reactions');
+const admin = require('./controllers/admin');
 
 const app = express()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 console.log(process.env.BEST_CLASS);
 
@@ -42,6 +43,7 @@ app.use('/users', users);
 app.use('/posts', posts);
 app.use('/comments', comments);
 app.use('/reactions', reactions);
+app.user('/admin', admin);
 
 app.get('*', (req, res, next) => {
     const filename = path.join(__dirname, '/../docs/index.html');

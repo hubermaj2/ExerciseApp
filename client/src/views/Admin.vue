@@ -30,8 +30,7 @@ export default {
   },
   methods:{
       submit: function (event){
-        //submitbackend(this.exercisename);
-        axios.post('https://damp-chamber-63928.herokuapp.com/admin/submit',
+        axios.post('https://damp-chamber-63928.herokuapp.com/admin',
     {
       exercisename: this.exercisename
     }
