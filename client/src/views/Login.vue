@@ -69,14 +69,13 @@ export default {
     )
             .then(response =>{
             console.log(response);
-            verification = response.data;
-            console.log(verification);
+            //verification = response.data;
+            //console.log(verification);
         })
         .catch(function (error) {
             console.log(error);
-            return;
         });
-        console.log(verification)
+        //console.log(verification)
             session.user = {
                 name: this.email,
                 handle: this.email,

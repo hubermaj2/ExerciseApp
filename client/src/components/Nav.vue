@@ -18,7 +18,7 @@
       <router-link to="/"  class="navbar-item" >Home</router-link>
       <router-link to="/about"  class="navbar-item" >About</router-link>
       <router-link to="/feed"  class="navbar-item" >Feed</router-link>
-      <router-link to="/record"  class="navbar-item" >Record</router-link>
+      <router-link v-if="session.user" to="/record"  class="navbar-item" >Record</router-link>
 
       <div v-if="session.user && session.user.name==='Admin'" class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link"> Admin </a>
