@@ -83,7 +83,7 @@ export default {
             //    handle: this.email,
             //    profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
             //}
-            session.addNotification('Yay! You logged in', 'success')
+            //session.addNotification('Yay! You logged in', 'success')
             const cookies = new Cookies();
             cookies.set('auth', "hi", {path: '/'});
             this.$router.push('feed')

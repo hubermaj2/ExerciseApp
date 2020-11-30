@@ -8,7 +8,7 @@
         Click "Record" above to begin tracking your exercise!
       </p>
       <p v-else class="subtitle">
-        Sign up or log in to begin!
+        Log in to begin!
       </p>
       
   </div>

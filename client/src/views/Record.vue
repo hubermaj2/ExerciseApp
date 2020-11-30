@@ -63,8 +63,11 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
     </div>
   </div>
 </div>
+{{exercises}}
 <div id="list"> Today's Exercises: <br> </div>
+
 </div>
+
 </template>
 
 <script>
