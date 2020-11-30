@@ -46,7 +46,9 @@
 
         <div class="navbar-dropdown">
           <router-link to="/users"  class="navbar-item" >Users</router-link>
+          <router-link to="/admin"  class="navbar-item" >Edit exercises</router-link>
         </div>
+        
       </div>
     </div>
 
