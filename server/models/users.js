@@ -27,9 +27,7 @@ async function get(id){
 }
 
 async function login(email, password){
-    console.log(email);
-    console.log(password);
-    const sql = `SELECT * FROM ${PREFIX}Users WHERE email = '${email}' AND password = '${password}'`;
+    const sql = `SELECT * FROM ${PREFIX}Users WHERE email = '${email}' AND Password = '${password}'`;
     const rows = await mysql.query(sql, [email, password]);
     console.log(rows);
     console.log("BRUH BRUH BRUH");
