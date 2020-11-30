@@ -29,8 +29,6 @@ async function get(id){
 async function login(email, password){
     const sql = `SELECT * FROM ${PREFIX}Users WHERE email = '${email}' AND Password = '${password}'`;
     const rows = await mysql.query(sql, [email, password]);
-    console.log(rows);
-    console.log("BRUH BRUH BRUH");
     if(!rows.length) throw { status: 404, message: "Sorry, you are not a registered user."};
     //console.log({password, Password: rows[0].Password});
 
@@ -38,7 +36,7 @@ async function login(email, password){
     //const res = await bcrypt.compare(password, rows[0].Password)
     //console.log ({res, hash})
     //if(! res ) throw { status: 403, message: "Sorry, wrong password." };
-    return get(rows[0].User_id);
+    return rows[0];
 }
 
 async function getTypes(){

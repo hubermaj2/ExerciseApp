@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is <i>Our</i> about page</h1>
+    <h1>This web application was developed by Jared Huberman for Moshe Plotkin's Fall 2020 Web Programming Course at SUNY New Paltz.</h1>
   </div>
 </template>

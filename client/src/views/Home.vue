@@ -1,12 +1,11 @@
 <template>
   <div class="home">
-    <h1>Welcome to our home page</h1>
+    <h1>Welcome to ExerciseApp!</h1>
 
     <h1 class="title">
-        Hello World
       </h1>
       <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
+        Click "Record" above to begin recording your exercises.
       </p>
       
   </div>

@@ -5,7 +5,7 @@
 <div class="level-item">
 
 
-    <form>
+    <!--<form>-->
         <div class="field">
         <p class="control has-icons-left has-icons-right">
             <input v-model="email" class="input" type="email" placeholder="Email">
@@ -35,7 +35,7 @@
             </button>
         </p>
         </div>
-    </form>
+    <!-- </form> -->
     </div>
     {{email}}
     {{password}}
@@ -49,6 +49,10 @@ import axios from "axios";
 let auth2 = null;
 
 export default {
+    data:{
+        email: '',
+        password: ''
+    },
     methods: {
 
         login: function(event){
