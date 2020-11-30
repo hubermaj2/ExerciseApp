@@ -30,7 +30,7 @@ export default {
   },
   methods:{
       submit: function (event){
-        submitbackend(this.exercisename)
+        submitbackend(this.exercisename);
       /*  axios.put('http://192.168.0.6:6969/theme', 
     {
       theme: this.state.theme
