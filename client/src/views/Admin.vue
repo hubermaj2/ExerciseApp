@@ -1,5 +1,6 @@
 <template>
   <div id="submit" class="admin">
+    <br>
     <h1>Admin Tools</h1>
 
     <h1 class="title">

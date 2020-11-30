@@ -20,6 +20,7 @@ onclick="javascript:document.querySelector('.dropdown').classList.toggle('is-act
 onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" aria-haspopup="true" aria-controls="dropdown-menu">
   -->
 <div>
+  <br>
     Select exercises from the list:
 <div class="dropdown is-active">
   <div class="dropdown-trigger">
@@ -71,20 +72,33 @@ import Sidebar from "@/components/Sidebar";
 import Post from "@/components/Post";
 import { posts } from "@/models/feed";
 import session from "@/models/session";
-
+import axios from "axios";
 export default {
-    data(){
+    data: function(){
         return {
-            posts
+            exercises: []
         }
     },
     components: {
-        Sidebar, Post
+        
     },
     methods: {
-        error(){
-           // session.addNotification('Something went wrong.', 'danger')
-        }
+        getExercises: function() {
+
+        var app = this;
+
+         axios.get('https://damp-chamber-63928.herokuapp.com/users')
+            .then(function (response) {
+            app.exercises = response.data;
+        })
+        .catch(function (error) {
+            console.log(error.message);
+        });
+
+      }
+    },
+    created() {
+      this.getExercises();
     }
 }
 
