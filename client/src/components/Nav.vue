@@ -13,7 +13,7 @@
     </a>
   </div>
 
-  <div v-if="session.user.name==='Admin'" id="navbarBasicExample" class="navbar-menu "  :class="{ 'is-active': isActive }">
+  <div id="navbarBasicExample" class="navbar-menu "  :class="{ 'is-active': isActive }">
     <div class="navbar-start">
       <router-link to="/"  class="navbar-item" >Home</router-link>
       <router-link to="/about"  class="navbar-item" >About</router-link>
@@ -29,15 +29,6 @@
         </div>
         
       </div>
-    </div>
- </div>
-
-   <div v-else id="navbarBasicExample" class="navbar-menu "  :class="{ 'is-active': isActive }">
-    <div class="navbar-start">
-      <router-link to="/"  class="navbar-item" >Home</router-link>
-      <router-link to="/about"  class="navbar-item" >About</router-link>
-      <router-link to="/feed"  class="navbar-item" >Feed</router-link>
-      <router-link to="/record"  class="navbar-item" >Record</router-link>
     </div>
  </div>
 
