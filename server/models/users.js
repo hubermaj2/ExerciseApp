@@ -33,7 +33,7 @@ async function login(email, password){
     const rows = await mysql.query(sql, [email, password]);
     console.log(rows);
     console.log("BRUH BRUH BRUH");
-    if(!rows.length) throw { status: 404, message: "Sorry, you are not a registered user." };
+    if(!rows.length) throw { status: 404, message: "Sorry, you are not a registered user." + email + " " + password };
     //console.log({password, Password: rows[0].Password});
 
     //const hash = await bcrypt.hash(password, rows[0].Password)
