@@ -20,7 +20,7 @@
       <router-link to="/feed"  class="navbar-item" >Feed</router-link>
       <router-link to="/record"  class="navbar-item" >Record</router-link>
 
-      <div class="navbar-item has-dropdown is-hoverable">
+      <div v-if="session.user && session.user.name==='Admin'" class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link"> Admin </a>
 
         <div class="navbar-dropdown">
@@ -44,7 +44,7 @@
 
 <script>
 import LoginBadge from "@/components/LoginBadge";
-
+import session from "@/models/session";
 export default {
   data: ()=> ({
       isActive: false

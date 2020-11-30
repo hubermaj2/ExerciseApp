@@ -54,7 +54,7 @@ export default {
     methods: {
 
         login: function(event){
-            if (this.email == "admin@email.com" && password == "1234"){
+            if (this.email == "admin@email.com" && this.password == "1234"){
                 session.user = {
                     name: 'Admin',
                     handle: 'admin'
