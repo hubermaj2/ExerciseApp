@@ -37,6 +37,8 @@
         </div>
     </form>
     </div>
+    {{email}}
+    {{password}}
 </div>
 </template>
 
