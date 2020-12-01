@@ -22,19 +22,18 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
 <div>
   <br>
     Select exercises from the list:
-<div class="dropdown is-active">
+    <br>
+<!--<div class="dropdown is-active">
   <div class="dropdown-trigger">
-    <button class="button"
+    <button class="button">
 
-
->
       <span>Exercise Types</span>
       <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span>
     </button>
   </div>
- <!-- <div class="dropdown-menu" id="dropdown-menu" role="menu">
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
     <div class="dropdown-content">
       <a href="#" onmousedown="javascript:document.getElementById('list').innerHTML += 'Walking <br>'" class="dropdown-item">
         Walking
@@ -66,7 +65,7 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
 <!--{{exercises}}-->
 <ul id="example-1">
   <li v-for="item in exercises" :key="item.Name">
-    {{ item.Name }}
+    {{ item.Name }} {{item.Type}} {{item.Muscle_Group}}
   </li>
 </ul>
 
