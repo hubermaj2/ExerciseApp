@@ -2,9 +2,6 @@
     <div id="LoginBadge">
 
         <div class="media" v-if="session.user">
-            <router-link to="/"  class="button is-light" >
-                Log out
-            </router-link>
         <div class="media-left">
             <figure class="image">
             <img :src="session.user.profile" alt="Placeholder image">
