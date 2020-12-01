@@ -21,7 +21,7 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
   -->
 <div>
   <br>
-    Select exercises from the list:
+    List of exercises:
     <br>
 <!--<div class="dropdown is-active">
   <div class="dropdown-trigger">

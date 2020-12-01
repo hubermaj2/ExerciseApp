@@ -78,12 +78,13 @@ export default {
             return;
         });
         //console.log(verification)
+        if(!session.user) return;
             session.user = {
                 name: this.email,
                 handle: this.email,
                 profile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png'
             }
-            //session.addNotification('Yay! You logged in', 'success')
+            session.addNotification('Yay! You logged in', 'success')
             const cookies = new Cookies();
             cookies.set('auth', "hi", {path: '/'});
             this.$router.push('feed')
@@ -98,7 +99,7 @@ export default {
                         profile: x.picture.data.url
                     }
                     session.addNotification('Yay! You logged in', 'success')
-                    this.$router.push('feed')
+                    //this.$router.push('feed')
                     console.log(x)
                 }  )
             }, { scope: 'public_profile,email,user_photos'})
