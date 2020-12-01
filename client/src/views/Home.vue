@@ -6,7 +6,7 @@
     <h1 class="title">
       </h1>
       <p v-if="session.user" class="subtitle">
-        Click "Record" above to begin tracking your exercise!
+        Click "Record" above to begin!
       </p>
       <p v-else class="subtitle">
         Log in to begin!
