@@ -1,24 +1,4 @@
 <template>
-
-  <!-- <div class="page">
-      <h2 class="title is-2">Feed Page</h2>
-
-        <div class="columns">
-            <div class="column is-two-thirds">
-                <Post v-for=" (x, i) in posts " 
-                      :key="i"
-                      :i="i"
-                      :post="x" /> 
-            </div>
-            <div class="column is-one-third" @mouseenter="error">
-                <Sidebar />
-            </div>
-        </div>
-  </div> 
-  
-onclick="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" 
-onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" aria-haspopup="true" aria-controls="dropdown-menu">
-  -->
 <div>
   <br>
     List of exercises:
@@ -62,7 +42,6 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
     </div>
   </div>
 </div> -->
-<!--{{exercises}}-->
 <br>
 {{"Name, Type, Muscle Group"}}
 <br>
@@ -73,8 +52,9 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
 </ul>
 
 <!-- <div id="list"> Today's Exercises: <br> </div>-->
-<div>If there is an exercise you would like to see added to the list, 
-  ask a site administrator to add it to the database for you.</div>
+<br>
+<h1 class="title">If there is an exercise you would like to see added to the list, 
+  ask a site administrator to add it to the database for you.</h1>
 
 </div>
 
