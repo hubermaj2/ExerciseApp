@@ -78,7 +78,7 @@ export default {
             return;
         });
         //console.log(verification)
-        if(!session.user) return;
+        //if(!session.user) return;
             session.user = {
                 name: this.email,
                 handle: this.email,
@@ -87,7 +87,7 @@ export default {
             session.addNotification('Yay! You logged in', 'success')
             const cookies = new Cookies();
             cookies.set('auth', "hi", {path: '/'});
-            this.$router.push('feed')
+            this.$router.push('home')
         },
         fbLogin(){
             FB.login( authInfo =>{
@@ -99,7 +99,7 @@ export default {
                         profile: x.picture.data.url
                     }
                     session.addNotification('Yay! You logged in', 'success')
-                    //this.$router.push('feed')
+                    this.$router.push('home')
                     console.log(x)
                 }  )
             }, { scope: 'public_profile,email,user_photos'})
