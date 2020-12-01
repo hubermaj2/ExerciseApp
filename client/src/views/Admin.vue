@@ -33,9 +33,8 @@
 
 <script>
 
-import admin from "../../../server/models/admin.js"
 import axios from "axios"
-import submitbackend from "../../../server/models/admin.js"
+import session from "@/models/session"
 // @ is an alias to /src
 // document.getElementById('textbox').value
 export default {

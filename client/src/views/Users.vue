@@ -29,7 +29,6 @@
             </tbody>
         </table>
         <br><br>
-        <form action = 'https://damp-chamber-63928.herokuapp.com/'>
         <h1 class=title>Add a user:</h1>
          <div>First Name:</div>
         <input v-model="firstname" type="text" ref="my_input"><br>
@@ -40,7 +39,7 @@
         <div>Password:</div>
         <input v-model="password" type="text" ref="my_input"><br>
         <button v-on:click="addUser">Submit</button>
-        </form>
+
   </div>
   
 </template>
@@ -91,6 +90,7 @@ export default {
     )
     .then(response => {
       console.log(response);
+      session.addNotification('User added successfully', 'success');
     })
     .catch(error => {
       console.log(error);
