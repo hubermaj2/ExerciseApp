@@ -63,9 +63,12 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
   </div>
 </div> -->
 <!--{{exercises}}-->
+<br>
+{{"Name, Type, Muscle Group"}}
+<br>
 <ul id="example-1">
   <li v-for="item in exercises" :key="item.Name">
-    {{ item.Name }} {{ item.Type }} {{ item.Muscle_Group }}
+    {{ item.Name }}, {{ item.Type }}, {{ item.Muscle_Group }}
   </li>
 </ul>
 

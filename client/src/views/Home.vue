@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <br>
     <h1>Welcome to ExerciseApp!</h1>
 
     <h1 class="title">
