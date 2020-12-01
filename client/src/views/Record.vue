@@ -63,7 +63,13 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
     </div>
   </div>
 </div>
-{{exercises}}
+<!--{{exercises}}-->
+<ul id="example-1">
+  <li v-for="item in exercises" :key="item.Name">
+    {{ item.Name }}
+  </li>
+</ul>
+
 <div id="list"> Today's Exercises: <br> </div>
 
 </div>
