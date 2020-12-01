@@ -58,6 +58,7 @@ export default {
     )
     .then(response => {
       console.log(response);
+      session.addNotification('Exercise added successfully', 'success');
     })
     .catch(error => {
       console.log(error);
