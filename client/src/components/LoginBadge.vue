@@ -15,9 +15,9 @@
 
 
         <div class="buttons" v-else>
-          <router-link to="/signup"  class="button is-light" >
+          <!--<router-link to="/signup"  class="button is-light" >
                 Sign Up
-            </router-link>
+            </router-link>-->
             <router-link to="/login"  class="button is-light" >
                 Log in
             </router-link>
