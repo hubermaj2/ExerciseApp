@@ -29,7 +29,7 @@
             </tbody>
         </table>
         <br><br>
-        <form action = ''>
+        <form action = 'https://damp-chamber-63928.herokuapp.com/'>
         <h1 class=title>Add a user:</h1>
          <div>First Name:</div>
         <input v-model="firstname" type="text" ref="my_input"><br>
