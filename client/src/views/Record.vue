@@ -34,7 +34,7 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
       </span>
     </button>
   </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+ <!-- <div class="dropdown-menu" id="dropdown-menu" role="menu">
     <div class="dropdown-content">
       <a href="#" onmousedown="javascript:document.getElementById('list').innerHTML += 'Walking <br>'" class="dropdown-item">
         Walking
@@ -62,7 +62,7 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
       </a>
     </div>
   </div>
-</div>
+</div> -->
 <!--{{exercises}}-->
 <ul id="example-1">
   <li v-for="item in exercises" :key="item.Name">
@@ -70,7 +70,9 @@ onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-acti
   </li>
 </ul>
 
-<div id="list"> Today's Exercises: <br> </div>
+<!-- <div id="list"> Today's Exercises: <br> </div>-->
+<div>If there is an exercise you would like to see added to the list, 
+  ask a site administrator to add it to the database for you.</div>
 
 </div>
 
