@@ -32,11 +32,10 @@ router
     })
     .post('/', (req, res, next) => {
         users.add(
-            req.body.FirstName,
-            req.body.LastName, 
-            req.body.DOB, 
-            req.body.Password, 
-            users.Types.USER, 
+            req.body.firstname,
+            req.body.lastname, 
+            req.body.email, 
+            req.body.password
         ).then(newUser => {
             res.send( newUser );
         }).catch(next)

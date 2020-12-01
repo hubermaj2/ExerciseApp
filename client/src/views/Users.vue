@@ -28,8 +28,19 @@
                 </tr>
             </tbody>
         </table>
-
+        <br><br>
+        <h1 class=title>Add a user:</h1>
+         <div>First Name:</div>
+        <input v-model="firstname" type="text" ref="my_input"><br>
+        <div>Last Name:</div>
+        <input v-model="lastname" type="text" ref="my_input"><br>
+        <div>E-mail address:</div>
+        <input v-model="email" type="text" ref="my_input"><br>
+        <div>Password:</div>
+        <input v-model="password" type="text" ref="my_input"><br>
+        <button v-on:click="addUser">Submit</button>
   </div>
+  
 </template>
 
 <script>
@@ -40,7 +51,11 @@ import axios from "axios";
 export default {
     data: function(){
         return {
-            users: []
+            users: [],
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: ''
         }
     },
     //async created(){
@@ -62,6 +77,22 @@ export default {
             console.log(error.message);
         });
 
+      },
+      addUser: function(event){
+        axios.post('https://damp-chamber-63928.herokuapp.com/users',
+    {
+      firstname: this.firstname,
+      lastname: this.lastname,
+      email: this.email,
+      password: this.password
+    }
+    )
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error);
+    });
       }
     },
     created() {

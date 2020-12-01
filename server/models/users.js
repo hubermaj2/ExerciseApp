@@ -52,10 +52,10 @@ async function getTypes(){
     return await mysql.query(`SELECT id, Name FROM ${PREFIX}Types WHERE Type_id = 2`);
 }
 
-async function add(FirstName, LastName, DOB, Password, User_Type){
-    const sql = `INSERT INTO ${PREFIX}Users (created_at, FirstName, LastName, DOB, Password, User_Type) VALUES ? ;`;
-    const params = [[new Date(), FirstName, LastName, new Date(DOB), Password, User_Type]];
-    return await mysql.query(sql, [params]);
+async function add(firstname, lastname, email, password){
+    const sql = `INSERT INTO ${PREFIX}Users (created_at, FirstName, LastName, DOB, email, Password, User_Type) VALUES  (CURRENT_TIMESTAMP, '${firstname}', '${lastname}', CURRENT_TIMESTAMP, '${email}', '${password}', 6);`;
+    //const params = [[new Date(), FirstName, LastName, new Date(DOB), Password, User_Type]];
+    return await mysql.query(sql, [firstname, lastname, email, password]);
 }
 
 async function update(id, FirstName, LastName, DOB, Password, User_Type){
